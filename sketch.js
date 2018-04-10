@@ -1,3 +1,4 @@
+//variables are set like this for tweaking
 let x = 0;
 let y = 0;
 let spacing = 10;
@@ -15,6 +16,7 @@ function setup() {
 
 function draw() {
 
+	//this if block changes through the colors
 	if (stage == 1) {
 		if (r < 255) {
 			r = r + colorsize
@@ -64,13 +66,16 @@ function draw() {
 
 	console.log(r + ", " + g + ", " + b)
 
+	//make a stroke with the selected color
 	stroke(r, g, b);
+	//sets a line acording to the "10 print"
 	if (random(1) < 0.5) {
 		line(x, y, x + spacing, y + spacing);
 	} else {
 		line(x, y + spacing, x + spacing, y);
 	}
 	x = x + spacing;
+	//jumps for the next line
 	if (x > width) {
 		x = 0;
 		y = y + spacing;
